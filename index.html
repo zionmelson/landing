@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quidity</title>
+    <!-- Basic SEO -->
+    <meta
+      name="description"
+      content="mev maximal extractable value the maximum amount of value that can be extracted from a given opportunity, resource, or system."
+    />
+
+    <!-- Open Graph (for Discord, Facebook, etc.) -->
+    <meta property="og:title" content="mev products" />
+    <meta
+      property="og:description"
+      content="mev maximal extractable value the maximum amount of value that can be extracted from a given opportunity, resource, or system."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://quidity.money" />
+    <meta
+      property="og:image"
+      content="https://assets.quidity.money/quidity.png"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="mev products" />
+    <meta
+      name="twitter:description"
+      content="maximal extractable value"
+    />
+    <meta
+      name="twitter:image"
+      content="https://assets.quidity.money/quidity.png"
+    />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- PNG fallback -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://assets.quidity.money/logo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://assets.quidity.money/logo.png"
+    />
+
+    <!-- Apple (iOS home screen) -->
+    <link rel="apple-touch-icon" href="https://assets.quidity.money/logo.png" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap");
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --black: #0a0a0a;
+        --gray: #888;
+        --light: #ccc;
+        --bg: #fff;
+      }
+
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+        background: var(--bg);
+        color: var(--black);
+        font-family: "Inter", sans-serif;
+        font-weight: 200;
+        font-size: 15px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ── Nav ── */
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.4rem 2.5rem;
+        border-bottom: 1px solid #e8e8e8;
+      }
+
+      .logo {
+        font-size: 0.95rem;
+        font-weight: 300;
+        letter-spacing: 0.08em;
+      }
+
+      nav .status {
+        font-size: 0.72rem;
+        color: var(--gray);
+        letter-spacing: 0.05em;
+      }
+
+      /* ── Hero video ── */
+
+      .hero-video {
+        width: min(90vw, 480px);
+        max-height: 40vh;
+        object-fit: contain;
+        border-radius: 6px;
+        margin-bottom: 2rem;
+      }
+
+      /* ── Hero ── */
+
+      .hero {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 2.5rem;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-weight: 200;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 1.1rem;
+      }
+
+      .hero h1 em {
+        font-style: normal;
+        color: var(--gray);
+      }
+
+      .hero p {
+        font-size: 0.88rem;
+        font-weight: 300;
+        color: var(--gray);
+        max-width: 380px;
+        line-height: 1.25;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      /* ── CTA ── */
+
+      .cta-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .cta-row input {
+        border: none;
+        border-bottom: 1px solid var(--black);
+        outline: none;
+        padding: 0.4rem 0;
+        font-family: inherit;
+        font-weight: 300;
+        font-size: 0.85rem;
+        width: 220px;
+        background: transparent;
+        color: var(--black);
+      }
+
+      .cta-row input::placeholder {
+        color: var(--light);
+      }
+
+      .cta-row button {
+        border: 1px solid var(--black);
+        background: transparent;
+        padding: 0.38rem 1.1rem;
+        font-family: inherit;
+        font-weight: 300;
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s;
+      }
+
+      .cta-row button:hover {
+        background: var(--black);
+        color: var(--bg);
+      }
+
+      .cta-note {
+        margin-top: 0.65rem;
+        font-size: 0.7rem;
+        color: var(--light);
+      }
+
+      /* ── Stats ── */
+
+      .stats {
+        border-top: 1px solid #e8e8e8;
+        display: flex;
+        justify-content: center;
+        padding: 1.4rem 2.5rem;
+        gap: 3rem;
+      }
+
+      .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .stat-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--gray);
+      }
+
+      .stat-value {
+        font-size: 1.25rem;
+        font-weight: 200;
+        letter-spacing: -0.01em;
+      }
+
+      /* ── Footer ── */
+
+      footer {
+        border-top: 1px solid #e8e8e8;
+        padding: 1rem 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.7rem;
+        color: var(--light);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+     
+
+      <section class="hero">
+          <h1><strong>mev </strong><em>noun</em></h1>
+          <p>/ˌɛm iː ˈviː/</p>
+          <p><strong>maximal extractable value</strong></p>
+          <p>the maximum amount of value that can be extracted from a given opportunity, resource, or system.</p>
+        <a
+          href="https://x.com/quidity_solana"
+          style="margin-top: 1.2rem; margin-bottom: 1.2rem; font-size: 0.75rem; color: var(--gray)"
+          >X
+        </a>
+      </section>
+
+      <div class="stats">
+        <!-- <div class="stat">
+          <span class="stat-label">TVL</span>
+          <span class="stat-value">—</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Fees collected</span>
+          <span class="stat-value">—</span>
+        </div> -->
+        <div class="stat">
+          <span class="stat-label">Active since</span>
+          <span class="stat-value">2025</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Network</span>
+          <span class="stat-value">Solana</span>
+        </div>
+      </div>
+
+      <footer>
+        <span>© 2026 mu</span>
+      </footer>
+    </div>
+  </body>
+</html>
